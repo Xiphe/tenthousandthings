@@ -15,11 +15,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav>
+        {{#if-greater-than basicNavigation.length 1}}<nav>
             <ul>{{#each basicNavigation}}
                 <li><a href="{{ path }}">{{ title }}</a></li>{{/each}}
             </ul>
-        </nav>
+        </nav>{{/if-greater-than}}
 
         <div class="wrap">
             {{{ contents }}}
@@ -28,6 +28,5 @@
         {{#if include-idea-bootstrap}}
         {{{ ideasBootstrap }}}
         {{/if}}
-
     </body>
 </html>
