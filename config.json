@@ -1,0 +1,8 @@
+{
+	"thing": "ideas",
+	"src": "./example",
+	"dest": "./public",
+	"templates": "_templates",
+	"whitelist": [],
+	"ignore": []
+}

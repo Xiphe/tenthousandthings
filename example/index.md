@@ -5,4 +5,7 @@ template: page.html
 include-idea-bootstrap: true
 ---
 
-This may be about Ideas 
+This may be about Ideas
+=======================
+
+<img src="/_img/bulp.png" alt="bulp" class="logo" />

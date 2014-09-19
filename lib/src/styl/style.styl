@@ -1,0 +1,43 @@
+color-main = black
+color-highlight = #002d8e
+color-highlight2 = #ff2d8e
+
+body
+	background #f3f3f3
+	font-family Avenir, Helvetica, sans-serif
+
+a
+	color color-highlight
+	&:hover
+		color color-highlight2
+
+h1, h2, h3, h4, h5, h6
+	text-align center
+
+nav
+	font-size 2em
+	ul
+		list-style none
+		padding 0
+		text-align center
+	li
+		display inline
+		&::after
+			content " • "
+			position relative
+			top .1em
+		&:last-child::after
+			content ""
+
+	a
+		text-decoration none
+
+.logo
+	position absolute
+	top 50%
+	left 50%
+	margin -139px 0 0 -88px
+
+.wrap
+	max-width 980px
+	margin 0 auto

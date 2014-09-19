@@ -1,14 +1,19 @@
-/* global require, console */
+/* global require, module */
 (function() {
   'use strict';
 
-  require('./lib/index')({thing: 'ideas', src: './example'})
+  var EventEmitter = new require('events').EventEmitter;
+  var emitter = new EventEmitter();
+
+  require('./lib/index')(require('./config'))
     .build(function(err) {
       if (err) {
-        console.error('ERROR: ', err);
+        emitter.emit('error', err);
       } else {
-        console.log('SUCCESS');
+        emitter.emit('success');
       }
     });
+
+  module.exports = emitter;
 
 })();
