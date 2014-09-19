@@ -1,8 +1,9 @@
 {
-	"thing": "ideas",
-	"src": "./example",
-	"dest": "./public",
-	"templates": "_templates",
+	"root": false,
+	"thing": "idears",
+	"src": "example",
+	"dest": false,
+	"templates": false,
 	"whitelist": [],
 	"ignore": []
 }
