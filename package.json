@@ -25,6 +25,8 @@
     "grunt-contrib-stylus": "~0.19.0",
     "grunt-contrib-uglify": "~0.6.0",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-http-server": "~1.0.0"
+    "grunt-http-server": "~1.0.0",
+    "grunt-bump": "0.0.15",
+    "grunt-shell": "~1.1.1"
   }
 }

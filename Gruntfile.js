@@ -78,6 +78,31 @@
           port: demoPort,
           runInBackground: true
         }
+      },
+      bump: {
+        options: {
+          files: ['package.json'],
+          updateConfigs: ['pkg']
+        }
+      },
+      shell: {
+        dirtycheck: {
+          command: [
+            'if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then',
+            ' echo "Index is dirty, commit or stash files before releasing.";',
+            ' exit 1;',
+            'fi'
+          ].join(' ')
+        },
+        bump: {
+          command: [
+            'git add lib/compiled -f',
+            'git add package.json',
+            'git commit -m"release v<%= pkg.version %>"',
+            'git tag v<%= pkg.version %> -m"version v<%= pkg.version %>"',
+            'git push origin master --tags'
+          ].join(' && ')
+        }
       }
     });
 
@@ -94,6 +119,14 @@
       copyAssets(projectConfig, this.async());
     });
     grunt.registerTask('build', ['stylus', 'uglify', 'metalsmith']);
+    grunt.registerTask('release', function(type) {
+      grunt.task.run([
+        'shell:dirtycheck',
+        'bump:' + (type || 'patch') + ':bump-only',
+        'build',
+        'shell:bump',
+      ]);
+    });
     grunt.registerTask('default', function() {
       process.env.BASE_JS_INCLUDE_AUTOLOAD = true;
       grunt.task.run(['http-server:devBackground', 'watch']);
