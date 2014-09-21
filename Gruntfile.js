@@ -110,7 +110,7 @@
       },
       bump: {
         options: {
-          files: ['package.json'],
+          files: ['package.json', 'bower.json'],
           updateConfigs: ['pkg']
         }
       },
@@ -127,6 +127,7 @@
           command: [
             'git add lib/compiled -f',
             'git add package.json',
+            'git add bower.json',
             'git commit -m"release v<%= pkg.version %>"',
             'git tag v<%= pkg.version %> -m"version v<%= pkg.version %>"',
             'git push origin master --tags'
