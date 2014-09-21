@@ -3,6 +3,7 @@
 	"thing": "ideas",
 	"src": "example",
 	"dest": false,
+	"pageSize": 10,
 	"templates": false,
 	"whitelist": [],
 	"ignore": []
