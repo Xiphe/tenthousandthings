@@ -1,6 +1,6 @@
 {
   "name": "tenthousandthings",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Provide a list of tenthousand things",
   "main": "lib/index.js",
   "scripts": {
