@@ -39,6 +39,7 @@
           },
           files: {
             'lib/compiled/js/scripts.js': [
+              'lib/src/js/init.js',
               'lib/src/js/**/[!bootstrap]*.js',
               '<%= ngtemplates.tenthousandthings.dest %>',
               'lib/src/js/bootstrap.js'
