@@ -22,16 +22,28 @@
         }
       },
       uglify: {
+        options: {
+          sourceMap: true,
+          sourceMapIncludeSources: true,
+        },
         scripts: {
           options: {
-            sourceMap: true,
-            sourceMapIncludeSources: true,
             sourceMapName: 'lib/compiled/js/scripts.map'
           },
           files: {
             'lib/compiled/js/scripts.js': [
               'lib/src/js/**/[!bootstrap]*.js',
               'lib/src/js/bootstrap.js'
+            ]
+          }
+        },
+        vendor: {
+          options: {
+            sourceMapName: 'lib/compiled/js/vendor.map'
+          },
+          files: {
+            'lib/compiled/js/vendor.js': [
+              'bower_components/angular/angular.js'
             ]
           }
         }
