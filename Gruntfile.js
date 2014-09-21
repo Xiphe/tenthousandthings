@@ -69,7 +69,11 @@
         },
         javascript: {
           files: ['lib/src/js/**/*.js'],
-          tasks: ['uglify', 'copyAssets']
+          tasks: ['uglify:scripts', 'copyAssets']
+        },
+        javascriptVendor: {
+          files: ['bower_components/**/*.js'],
+          tasks: ['uglify:vendor', 'copyAssets']
         },
         exmple: {
           files: [path.join(projectConfig.src, '/**/*')],
