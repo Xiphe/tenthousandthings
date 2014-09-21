@@ -21,6 +21,13 @@
           }
         }
       },
+      ngtemplates: {
+        tenthousandthings: {
+          cwd: 'lib/partials',
+          src: '**/*.html',
+          dest: '.tmp/ngtemplates.js'
+        }
+      },
       uglify: {
         options: {
           sourceMap: true,
@@ -33,6 +40,7 @@
           files: {
             'lib/compiled/js/scripts.js': [
               'lib/src/js/**/[!bootstrap]*.js',
+              '<%= ngtemplates.tenthousandthings.dest %>',
               'lib/src/js/bootstrap.js'
             ]
           }
@@ -66,6 +74,10 @@
         stylus: {
           files: ['lib/src/styl/**/*.styl'],
           tasks: ['stylus', 'copyAssets']
+        },
+        templates: {
+          files: ['lib/partials/**/*.html'],
+          tasks: ['ngtemplates', 'uglify:scripts', 'copyAssets']
         },
         javascript: {
           files: ['lib/src/js/**/*.js'],
@@ -134,7 +146,7 @@
     grunt.registerTask('copyAssets', function() {
       copyAssets(projectConfig, this.async());
     });
-    grunt.registerTask('build', ['stylus', 'uglify', 'metalsmith']);
+    grunt.registerTask('build', ['stylus', 'ngtemplates', 'uglify', 'metalsmith']);
     grunt.registerTask('release', function(type) {
       grunt.task.run([
         'shell:dirtycheck',
