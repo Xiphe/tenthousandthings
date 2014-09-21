@@ -31,7 +31,7 @@
       uglify: {
         options: {
           sourceMap: true,
-          sourceMapIncludeSources: true,
+          sourceMapIncludeSources: true
         },
         scripts: {
           options: {
@@ -40,7 +40,7 @@
           files: {
             'lib/compiled/js/scripts.js': [
               'lib/src/js/init.js',
-              'lib/src/js/**/[!bootstrap]*.js',
+              'lib/src/js/**/*[!bootstrap]*.js',
               '<%= ngtemplates.tenthousandthings.dest %>',
               'lib/src/js/bootstrap.js'
             ]
@@ -95,7 +95,7 @@
           tasks: ['metalsmith']
         },
         builder: {
-          files: ['lib/build/*'],
+          files: ['lib/build/*', 'example/*', 'config.json'],
           tasks: ['metalsmith']
         }
       },
