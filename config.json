@@ -1,6 +1,8 @@
 {
 	"root": false,
 	"thing": "ideas",
+	"colorSalt": ":)",
+	"colorSalt2": "XD",
 	"src": "example",
 	"dest": false,
 	"pageSize": 10,
