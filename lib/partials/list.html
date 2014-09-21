@@ -1,3 +1,7 @@
-<div class="ttt-list">
+<div class="ttt-list"
+	infinite-scroll="scroll()"
+	infinite-scroll-disabled="!hasPages"
+	infinite-scroll-immediate-check="false"
+>
 	<ttt-thing ng-repeat="thing in things" thing="thing"></ttt-thing>
 </div>
