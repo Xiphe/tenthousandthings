@@ -125,12 +125,14 @@
         },
         bump: {
           command: [
+            'git update-index --no-assume-unchanged $(find lib/compiled -type f)',
             'git add lib/compiled -f',
             'git add package.json',
             'git add bower.json',
             'git commit -m"release v<%= pkg.version %>"',
             'git tag v<%= pkg.version %> -m"version v<%= pkg.version %>"',
-            'git push origin master --tags'
+            'git push origin master --tags',
+            'git update-index --assume-unchanged $(find lib/compiled -type f)'
           ].join(' && ')
         }
       }

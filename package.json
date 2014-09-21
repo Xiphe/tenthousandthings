@@ -4,7 +4,7 @@
   "description": "Provide a list of tenthousand things",
   "main": "lib/index.js",
   "scripts": {
-    "install": "bower install",
+    "install": "git update-index --assume-unchanged $(find lib/compiled -type f) && bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hannes Diercks <tenthousandthings@xiphe.net>",
