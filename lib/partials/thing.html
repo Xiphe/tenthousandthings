@@ -1,4 +1,6 @@
 <article ng-if="thing.loaded" class="ttt-thing" ng-style="style">
-	<h3>{{thing.title}}</h3>
-	<div ng-bind-html="getContent()"></div>
+	<div class="wrap">
+		<h3>{{thing.title}}</h3>
+		<div ng-bind-html="getContent()"></div>
+	</div>
 </article>
