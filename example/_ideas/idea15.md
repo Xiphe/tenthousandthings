@@ -2,6 +2,7 @@
 categories:
   - foo
 date: Sep. 23, 2014 01:56
+compile: true
 ---
 
 > Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
