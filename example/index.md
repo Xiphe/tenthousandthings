@@ -8,5 +8,5 @@ include-idea-bootstrap: true
 This may be about Ideas
 =======================
 
-<img src="/_img/bulp.png" alt="bulp" class="logo" />
+<img src="/_img/bulp.png" alt="bulp" class="ttt-logo" />
 <ttt-list></ttt-list>
