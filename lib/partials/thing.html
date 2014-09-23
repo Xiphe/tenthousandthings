@@ -1,4 +1,9 @@
-<article ng-if="thing.loaded" class="ttt-thing" ng-style="style">
+<article
+	ng-if="thing.loaded"
+	class="ttt-thing"
+	ng-class="isLight ? 'ttt-light-bg' : 'ttt-dark-bg'"
+	ng-style="style"
+>
 	<div class="wrap">
 		<h3>{{thing.title}}</h3>
 		<div ng-bind-html="getContent()"></div>
