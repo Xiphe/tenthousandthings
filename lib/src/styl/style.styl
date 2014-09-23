@@ -1,3 +1,5 @@
+@import 'nib'
+
 color-main = black
 color-highlight = #002d8e
 color-highlight2 = #ff2d8e
@@ -41,7 +43,13 @@ nav
 p
 	margin 0
 
+blockquote
+	font-style italic
+	opacity .8
+	border-left .5rem solid
+
 article
+	overflow hidden
 	font-size 1.1rem
 	line-height 1.5rem
 	padding .1rem
@@ -66,19 +74,40 @@ article
 
 	h3
 		font-size 3rem
-		line-height 1.5rem
-		margin 1rem 0
+		line-height 3rem
+		margin 3rem 0 0
 
 	.ttt-wrap
 		max-width 720px
 		margin-bottom 3rem
 		margin-top 2rem
 
-	p
+	p, blockquote
 		margin 1rem auto
+
+	blockquote
+		padding-left 1rem
 
 	img
 		display block
 		padding 1rem
 		max-width 100%
 
+	.ttt-thing-i-wrap
+		width 100%
+		height 0
+
+	.ttt-thing-i
+		font-size 20rem
+		line-height 15rem
+		opacity .1
+		font-weight 900
+		margin-left -1rem
+
+	.ttt-thing-meta
+		opacity 0
+		transition opacity .5s
+
+	&:hover
+		.ttt-thing-meta
+			opacity .5

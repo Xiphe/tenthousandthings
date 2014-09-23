@@ -4,8 +4,19 @@
 	ng-class="isLight ? 'ttt-light-bg' : 'ttt-dark-bg'"
 	ng-style="style"
 >
-	<div class="wrap">
-		<h3>{{thing.title}}</h3>
+	<div class="ttt-thing-i-wrap">
+		<div class="ttt-thing-i">#{{thing.i}}</div>
+	</div>
+	<div class="ttt-wrap">
+		<header>
+			<h3>{{thing.title}}</h3>
+			<div class="ttt-thing-meta">
+				<time datetime="{{thing.isoDate}}">{{thing.date}}</time> in
+				<span ng-repeat="category in thing.categories" class="ttt-thing-category" rel="category">
+					{{category}}
+				</span>
+			</div>
+		</header>
 		<div ng-bind-html="getContent()"></div>
 	</div>
 </article>
