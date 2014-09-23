@@ -2,7 +2,7 @@
 	ng-if="thing.loaded"
 	class="ttt-thing"
 	ng-class="isLight ? 'ttt-light-bg' : 'ttt-dark-bg'"
-	ng-style="style"
+	ng-style="getStyle()"
 >
 	<div class="ttt-thing-i-wrap">
 		<div class="ttt-thing-i">#{{thing.i}}</div>
